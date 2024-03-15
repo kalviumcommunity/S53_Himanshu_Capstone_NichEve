@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
-require('dotenv').config({path:'../.env'})
+require('dotenv').config()
 const port = process.env.PORT
 console.log(port);
-const { connection, isConnected } = require('../Database/Db')
+const { connection, isConnected } = require('./Database/Db')
 
 const errorHandler = (err, req, res, next) => {
     if(err){
