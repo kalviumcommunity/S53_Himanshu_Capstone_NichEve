@@ -12,8 +12,8 @@ router.get('/Events',async(req,res)=>{
         const AllEvents = await Event.find();
         res.send({Events:AllEvents})
     } catch (error) {
-        res.json(error)
-        console.log(error);
+        console.error("Error occurred while fetching events:", error);
+        res.status(500).json({ error: "Internal server error" });
     }
     
 })
