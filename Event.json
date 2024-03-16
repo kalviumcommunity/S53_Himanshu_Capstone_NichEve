@@ -1,0 +1,10 @@
+[{
+    "Name": "Sample Event",
+    "Date": "2024-12-31",
+    "Guests": "John Doe, Jane Smith",
+    "Venue": "Sample Venue",
+    "image": "https://example.com/sample-image.jpg",
+    "price": "50",
+    "Description": "This is a sample event description.",
+    "Organiser": "Sample Organiser"
+}]
