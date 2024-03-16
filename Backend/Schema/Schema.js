@@ -5,22 +5,22 @@ const Schema = new mongoose.Schema({
         required:true
     },
     Date:{
-        type:Date,
-        required:true
+        type: String
+        // required:true
     },
     Guests:{
         type: String
     },
     Venue:{
-        type:Data,
+        type: String,
         required:true
     },
-    Image:{
+    image:{
         type:String,
         required:true
     },
     price:{
-        type:Number,
+        type:String,
         required:true
     },
     Description:{
@@ -31,5 +31,5 @@ const Schema = new mongoose.Schema({
     }
 })
 
-const Data = mongoose.model('Events', Schema);
-module.exports = Data;
+const Event = mongoose.model('events', Schema);
+module.exports = Event;
