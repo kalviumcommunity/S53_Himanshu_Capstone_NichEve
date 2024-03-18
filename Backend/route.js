@@ -17,4 +17,17 @@ router.get('/Events',async(req,res)=>{
     }
     
 })
+
+router.post('/Events',async(req,res)=>{
+    try {
+        const data = req.body;
+        const new_event_data = new Event(data);
+        const response = await new_event_data.save();
+        console.log("Data Saved");    
+        res.status(200).json(response)    
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({error:"Internal server error"})
+    }
+})
 module.exports=router;
