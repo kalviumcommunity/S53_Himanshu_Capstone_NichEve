@@ -11,3 +11,17 @@
   border-radius: 8px;
   background-color: #A99155;
 }
+.footer-visible {
+  display: block;
+}
+
+.footer-hidden {
+  display: none;
+}
+.symbol-visible {
+  display: block;
+}
+
+.symbol-hidden {
+  display: none;
+}
