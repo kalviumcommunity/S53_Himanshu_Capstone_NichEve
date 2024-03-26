@@ -3,10 +3,12 @@ import Headroom from 'react-headroom';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [blur, setIsBlur] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+    setIsBlur(!blur)
   };
 
   useEffect(() => {
@@ -25,16 +27,18 @@ const Navbar = () => {
     <nav>
       <Headroom>
         {windowWidth < 1000 ?
-          <div class=" text-white flex justify-between pt-2 px-4 md:px-10 lg:pl-96 lg:pr-28 lg:px-10 w-full font-light align-middle font-display3 text-lg z-50 backdrop-blur-xl h-24 max-sm:w-full max-sm:text-sm max-sm:h-14 max-sm:pl-0 max-sm:pr-3 max-sm:pt-6 max-sm:pb-0">
-            <div className="max-sm:flex flex-col max-sm:mt-7 max-sm:mt:10 max-sm: mr-11 max-sm:h-56 max-sm:w-20 sm:mt-11 sm:h-72 sm:-ml-5">
+          <div class=" text-white flex justify-between pt-2 px-4 w-full font-light align-middle font-display3 text-lg z-50 backdrop-blur-sm h-24 max-sm:w-full max-sm:text-sm max-sm:h-16 max-sm:pl-0 max-sm:pr-3 max-sm:pt-0 max-sm:pb-0">
+            <div className="max-sm:flex flex-col max-sm:mt-7 max-sm:mt:10 max-sm: mr-11 max-sm:h-screen max-sm:w-20 sm:mt-11 sm:h-72 sm:-ml-5">
               <div className="self-center cursor-pointer max-sm:block lg:hidden sm:ml-10" onClick={toggleMenu}>
                 <img src="/ImgNav/hamburger.png" alt="Menu" className="h-6 self-center" />
               </div>
-              <div className={showMenu ? "block lg:flex max-sm:flex max-sm:flex-col max-sm:w-20 mt-3 max-sm:h-48 max-sm:justify-between max-sm:divide-y max-sm:divide-Royal-Golden max-sm:divide-x-4 max-sm:outline max-sm:outline-offset-2 max-sm:outline-2 sm:mt-6 sm:h-60 sm:justify-between sm:flex sm:flex-col sm:divide-y sm:divide-Royal-Golden sm:divide-x-4 sm:outline sm:outline-offset-2 sm:outline-2 sm:w-36" : "hidden lg:flex lg:items-center"}>
+              <div className={showMenu ? "block lg:flex max-sm:flex max-sm:flex-col max-sm:w-screen mt-3 h-screen max-sm:justify-between max-sm:divide-y max-sm:divide-Royal-Golden max-sm:divide-x-4 max-sm:outline max-sm:outline-offset-2 max-sm:outline-2 sm:mt-6 sm:justify-between sm:flex sm:flex-col sm:divide-y sm:divide-Royal-Golden sm:divide-x-4 sm:outline sm:outline-offset-2 sm:outline-2 max-sm:bg-black max-sm:outline-Royal-Golden backdrop-blur-sm z-50" : "hidden lg:flex lg:items-center"}>
                 <img src="/ImgNav/Avatar.svg" alt="Avatar" className="h-14 self-center cursor-pointer max-sm:h-8" />
                 <p className="self-center hover:text-Royal-Golden cursor-pointer">HOME</p>
                 <p className="self-center hover:text-Royal-Golden cursor-pointer">Events</p>
                 <p className="self-center hover:text-Royal-Golden cursor-pointer">Blogs</p>
+                <p className="self-center hover:text-Royal-Golden cursor-pointer">About us</p>
+                <p className="self-center hover:text-Royal-Golden cursor-pointer">Contact us</p>
               </div>
             </div>
             <div className="mt-5 ">

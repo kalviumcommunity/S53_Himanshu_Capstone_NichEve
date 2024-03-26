@@ -11,6 +11,7 @@ import '../App.css'
 const Body = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     useEffect(()=>{
         AOS.init({duration:1000});
         gsap.registerPlugin(ScrollTrigger);
@@ -27,6 +28,19 @@ const Body = () => {
             x:100,
         })
     },[])
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            setVisible(currentScrollPos < 30);
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [prevScrollPos]);
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPos = window.pageYOffset;
@@ -62,19 +76,19 @@ const Body = () => {
                 </div>
                 <Footer/>
                 <div className="flex justify-between mt-80  pr-4 max-sm:flex max-sm:flex-col-reverse max-sm:mt-60">
-                    <div className='gsapscroll'>
+                    <div className = {windowWidth <= 600 ? "max-sm:ml-14" : "gsapscroll"} >
                         <p className="font-display4 font-hard text-3xl text-white max-sm:text-lg max-sm:mt-20">Book your unforgettable</p>
                         <p className="font-display5 text-med text-crinze-Purple ml-14 max-sm:text-2xl">Memories</p>
-                        <div className="ml-40 mt-14 max-sm:ml-24 max-sm:mt-5">
-                            <img src="/BodyImg/Rectangle3.svg" alt="Frame" className="z-20 max-sm:h-14 max-sm:w-28" />
-                            <p className="text-white font-display6 text-xl z-10 translate-x-10 -translate-y-11 max-sm:text-base max-sm:translate-x-7 max-sm:-translate-y-10">Explore</p>
+                        <div className="ml-40 mt-14 max-sm:ml-24 max-sm:mt-5 max-sm:relative -z-0">
+                            <img src="/BodyImg/Rectangle3.svg" alt="Frame" className="z-20 max-sm:h-14 max-sm:w-28 max-sm:absolute" />
+                            <p className="text-white font-display6 text-xl z-10 translate-x-10 -translate-y-11 max-sm:text-base max-sm:translate-x-0 max-sm:translate-y-0 max-sm:absolute max-sm:transform max-sm:top-4 max-sm:ml-7">Explore</p>
                         </div>
                     </div>
                     <div data-aos="fade-up" data-aos-offset="20" data-aos-easing="ease-in-sine">
-                        <div className="flex">
+                        <div className="flex ml-3">
                             <img src="/BodyImg/img-1.jpg" alt="" className="-mt-24 h-64 mr-10 rounded-lg max-sm:h-32 max-sm:ml-4" />
                             <img src="/BodyImg/img-2.jpg" alt="" className="h-64 rounded-lg mt-40 mr-4 max-sm:h-32 max-sm:-ml-5 max-sm:mt-16" />
-                            <img src="/BodyImg/img-3.jpg" alt="" className="h-72 rounded-lg -mt-36 mr-24 max-sm:h-32 max-sm:-mt-28" />
+                            <img src="/BodyImg/img-3.jpg" alt="" className="h-72 rounded-lg -mt-36 mr-24 max-sm:h-32 max-sm:-mt-28 max-sm:mr-0" />
                         </div>
                     </div>
                 </div>
@@ -155,25 +169,25 @@ const Body = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-60 flex justify-evenly align-middle max-sm:flex-col-reverse max-sm:justify-between">
-                    <div className=" self-center">
+                <div className="mt-60 flex justify-evenly align-middle max-sm:flex-col-reverse max-sm:justify-between pb-24 max-sm:pb-24">
+                    <div className=" self-center -mt-16 max-sm:mt-20">
                         <p className="font-Sync font-bold text-4xl text-white pb-4 max-sm:text-2xl">Simple Steps</p>
                         <div>
-                            <div className="flex pb-4">
+                            <div className="flex pb-4 max-sm:pb-3">
                                 <img src="/BodyImg/chat.svg" alt="" />
-                                <p className="font-Work_Sans text-white text-lg ml-4">Choose a theme, set the mood.</p>
+                                <p className="font-Work_Sans text-white text-lg ml-4 max-sm:text-base">Choose a theme, set the mood.</p>
                             </div>
                             <div className="flex pb-4">
                                 <img src="/BodyImg/customize.svg" alt="" />
-                                <p className="font-Work_Sans text-white text-lg ml-4">Customize the animation details.</p>
+                                <p className="font-Work_Sans text-white text-lg ml-4 max-sm:text-base">Customize the animation details.</p>
                             </div>
                             <div className="flex">
                                 <img src="/BodyImg/details.svg" alt="" />
-                                <p className="font-Work_Sans text-white text-lg ml-4">Enjoy your animated event!</p>
+                                <p className="font-Work_Sans text-white text-lg ml-4 max-sm:text-base">Enjoy your animated event!</p>
                             </div>
                         </div>
                     </div>
-                    <div className="max-sm:flex max-sm:flex-col">
+                    <div className="max-sm:flex max-sm:flex-col mb-11">
                         <img src="/BodyImg/iphone2.svg" alt="Iphone" className="max-sm:h-96"  />
                         <div className="h-11 w-32 bg-unique-gray rounded-lg flex justify-between pl-6 pr-4 ml-20 max-sm:ml-40 max-sm:h-10 max-sm:w-28 max-sm:pl-4">
                             <p className="text-white font-Inter text-xs self-center">Plan Yours</p>
