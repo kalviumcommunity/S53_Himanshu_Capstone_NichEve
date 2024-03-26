@@ -169,7 +169,7 @@ const Body = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-60 flex justify-evenly align-middle max-sm:flex-col-reverse max-sm:justify-between">
+                <div className="mt-60 flex justify-evenly align-middle max-sm:flex-col-reverse max-sm:justify-between pb-24 max-sm:pb-24">
                     <div className=" self-center -mt-16 max-sm:mt-20">
                         <p className="font-Sync font-bold text-4xl text-white pb-4 max-sm:text-2xl">Simple Steps</p>
                         <div>
