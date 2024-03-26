@@ -46,7 +46,8 @@ module.exports = {
         'shiny-Purple': '#C78DD1',
         'dark-Yellow': '#B3A73F',
         'yellow-round': '#C4ED50',
-        "unique-gray": '#393E46'
+        "unique-gray": '#393E46',
+        "Royal-Golden": '#A99155',
       },
     },
   },
