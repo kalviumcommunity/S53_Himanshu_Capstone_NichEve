@@ -1,0 +1,4 @@
+.Home:hover{
+    color: rgb(169, 145, 85);
+    transition: .2s ease-in-out;
+}

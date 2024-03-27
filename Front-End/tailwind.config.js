@@ -11,7 +11,8 @@ module.exports = {
     extend: {
       fontSize: {
         '10xl': ['10.25rem'],
-        'med':['5.188rem']
+        'med':['5.188rem'],
+        's' : ['0.75rem']
       },
       fontFamily: {
         display: ["Italiana", ...defaultTheme.fontFamily.sans],
@@ -24,13 +25,14 @@ module.exports = {
         Roboto:["Roboto", "sans-serif"],
         Inter:[ "Inter", "sans-serif"],
         Sync:["Syne", "sans-serif"],
-        Work_Sans:["Work Sans", "sans-serif"]
+        Work_Sans:["Work Sans", "sans-serif"],
+        LED_Dot_Matrix:[ 'LED Dot-Matrix',"sans-serif"],
+        Lavishly_Yours:["Lavishly Yours", "cursive"],
       },
       textColor: {
         "Royal-Golden": '#A99155',
         "crinze-Purple": '#EC8EEE',
         "lighter-Gray": "#54575F",
-        
       },
       fontWeight:{
         'light':300,
@@ -48,6 +50,8 @@ module.exports = {
         'yellow-round': '#C4ED50',
         "unique-gray": '#393E46',
         "Royal-Golden": '#A99155',
+        "sweet-Purple" : '#CC00FF',
+        "pappy-brown" : "#7C613E"
       },
     },
   },
