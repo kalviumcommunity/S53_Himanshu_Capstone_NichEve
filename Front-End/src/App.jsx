@@ -1,6 +1,6 @@
 import './App.css'
 import Lenis from '@studio-freight/lenis'
-import Body from './Components/Body'
+import Routing from './Routes/Routing'
 function App() {
   const lenis = new Lenis()
 
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Body/>
+      <Routing/>
     </>
   )
 }

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './Navbar';
+import Navbar from '../Reusable_comp/Navbar';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AOS from 'aos';
-import Footer from './Footer';
+import Footer from '../Reusable_comp/Footer';
 import 'aos/dist/aos.css'
-import '../App.css'
+import '../../App.css'
 
 
 const Body = () => {
