@@ -25,14 +25,14 @@ const EventPage = () => {
                 </div>
                 <Footer />
                 <div>
-                    <div className="mt-72 pl-52">
-                        <select name="Sort By" className="text-white text-xl bg-black outline-sweet-Purple border-sweet-Purple border-2 outline-none w-24 pl-3 h-9">
+                    <div className="mt-72 pl-52 max-sm:pl-8">
+                        <select name="Sort By" className="text-white text-xl bg-black outline-sweet-Purple border-sweet-Purple border-2 outline-none w-24 pl-3 h-9 max-sm:text-lg max-sm:h-8 max-sm:w-20">
                             <option value="All">All</option>
                             <option value="value 1">Free</option>
                             <option value="value 2">Paid</option>
                         </select>
                     </div>
-                    <div className="grid grid-cols-2 pl-52 pt-32 gap-32">
+                    <div className="grid grid-cols-2 pl-52 pt-32 gap-32 max-sm:grid-cols-1 max-sm:pl-12">
                         <div>
                             <img src="/Event_page_Img/img_1.jpg" alt="Event_Image" className=" h-72 w-72 outline-sweet-Purple border-sweet-Purple border-2 outline-none" loading='lazy' />
                             <div className="flex outline-Royal-Golden border-Royal-Golden border-2 outline-none justify-evenly w-72 mt-3">
