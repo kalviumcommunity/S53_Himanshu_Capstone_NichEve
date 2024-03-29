@@ -20,14 +20,6 @@ const Navbar = () => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setBgBlur(true);
@@ -35,10 +27,12 @@ const Navbar = () => {
         setBgBlur(false);
       }
     };
-  
+
+    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-  
+
     return () => {
+      window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
