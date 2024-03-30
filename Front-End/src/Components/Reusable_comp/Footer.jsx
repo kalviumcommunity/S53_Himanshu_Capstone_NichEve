@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css'
+import { NavLink } from 'react-router-dom';
 const Footer = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
@@ -44,7 +45,9 @@ const Footer = () => {
                 </div>
                 <div className="flex justify-between z-50">
                     <div className="flex justify-between w-2/6 pr-24 -mt-16 ml-11 font-display text-2xl text-white font-bold tracking-wider self-center z-50">
-                        <h2 className="hover:text-Royal-Golden cursor-pointer">Contact Us</h2>
+                        <NavLink to='/Contact_us' >
+                            <h2 className="hover:text-Royal-Golden cursor-pointer">Contact Us</h2>
+                        </NavLink>
                         <h2 className="hover:text-Royal-Golden cursor-pointer">About Us</h2>
                         <h2 className="hover:text-Royal-Golden cursor-pointer">Explore</h2>
                     </div>
