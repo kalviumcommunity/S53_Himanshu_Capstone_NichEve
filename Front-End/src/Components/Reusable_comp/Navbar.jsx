@@ -58,7 +58,9 @@ const Navbar = () => {
                   <p className="self-center hover:text-Royal-Golden cursor-pointer">Blogs</p>
                 </NavLink>
                 <p className="self-center hover:text-Royal-Golden cursor-pointer">About us</p>
-                <p className="self-center hover:text-Royal-Golden cursor-pointer">Contact us</p>
+                <NavLink to='/Contact_us' className="self-center">
+                  <p className="self-center hover:text-Royal-Golden cursor-pointer">Contact us</p>
+                </NavLink>
               </div>
             </div>
             <div className="mt-5 ">
