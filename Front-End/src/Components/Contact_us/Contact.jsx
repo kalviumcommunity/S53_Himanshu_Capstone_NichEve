@@ -29,9 +29,9 @@ const Contact = () => {
         };
     },[])
   return (
-    <main>
+    <main className="bg-[url(/Contact_us_Img/bg-img.jpg)] bg-no-repeat bg-cover bg-center bg-fixed z-10">
         <Navbar/>
-        <div className="bg-[url(/Contact_us_Img/bg-img.jpg)] bg-no-repeat bg-cover bg-center bg-fixed z-10 -mt-24">
+        <div className='-mt-24'>
         <div className="flex justify-center h-screen align-middle items-center pb-28 flex-col">
                     <div data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine" className="mt-20">
                         <p className=" text-white text-8xl max-sm:text-4xl ml-10">Feel Free</p>
@@ -39,7 +39,7 @@ const Contact = () => {
                         <span className="text-[#B39342] text-10xl font-Lavishly_Yours max-sm:text-6xl"> Contact Us</span>
                     </div>
                     <div className={visible ? 'symbol-visible' : 'symbol-hidden'}>
-                        <div className="mt-20 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-60 " >
+                        <div className="mt-32 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-60 " >
                             <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
                             <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy'/>
                         </div>
