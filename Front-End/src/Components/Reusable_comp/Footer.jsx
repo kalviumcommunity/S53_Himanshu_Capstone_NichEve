@@ -48,14 +48,16 @@ const Footer = () => {
                         <NavLink to='/Contact_us' >
                             <h2 className="hover:text-Royal-Golden cursor-pointer">Contact Us</h2>
                         </NavLink>
-                        <h2 className="hover:text-Royal-Golden cursor-pointer">About Us</h2>
+                        <NavLink to='/About'>
+                            <h2 className="hover:text-Royal-Golden cursor-pointer">About Us</h2>
+                        </NavLink>
                         <h2 className="hover:text-Royal-Golden cursor-pointer">Explore</h2>
                     </div>
                     <div className="flex justify-between w-1/4 -mt-16 mr-16 self-center z-50 ">
-                        <img src="/BodyImg/Github_logo.svg" alt="GitHub_Logo" className="cursor-pointer" loading='lazy' />
-                        <img src="/BodyImg/Instagram_Logo.svg" alt="Instagram_Logo" className="cursor-pointer" loading='lazy' />
+                        <a href="https://github.com/kalviumcommunity/S53_Himanshu_Capstone_NichEve" target='_blank'><img src="/BodyImg/Github_logo.svg" alt="GitHub_Logo" className="cursor-pointer" loading='lazy' /></a>
+                        <a href="https://www.instagram.com/silent_lover__7080?igsh=MWtycGl3aTBhanZiMA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><img src="/BodyImg/Instagram_Logo.svg" alt="Instagram_Logo" className="cursor-pointer" loading='lazy' /></a>
                         <img src="/BodyImg/Facebook_Logo.svg" alt="Facebook_Logo" className="cursor-pointer" loading='lazy' />
-                        <img src="/BodyImg/Twitter_Logo.svg" alt="Twitter_Logo" className="cursor-pointer" loading='lazy' />
+                        <a href="https://twitter.com/Himanshu9366" target="_blank" rel="noopener noreferrer"><img src="/BodyImg/Twitter_Logo.svg" alt="Twitter_Logo" className="cursor-pointer" loading='lazy' /></a>
                     </div>
                 </div>
             </div>
