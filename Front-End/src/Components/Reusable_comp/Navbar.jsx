@@ -65,7 +65,9 @@ const Navbar = () => {
                 <NavLink to='/Blog' className="self-center">
                   <p className="self-center hover:text-Royal-Golden cursor-pointer">Blogs</p>
                 </NavLink>
-                <p className="self-center hover:text-Royal-Golden cursor-pointer">About us</p>
+                <NavLink to='/About' className="self-center">
+                  <p className="self-center hover:text-Royal-Golden cursor-pointer">About us</p>
+                </NavLink>
                 <NavLink to='/Contact_us' className="self-center">
                   <p className="self-center hover:text-Royal-Golden cursor-pointer">Contact us</p>
                 </NavLink>
@@ -94,45 +96,39 @@ const Navbar = () => {
               </SignedIn>
           </div>
           :
-          <div className={`flex justify-between pt-2 pl-96 pr-28 px-10 text-white w-full font-light align-middle font-display3 text-lg z-50 ${bgblur ? 'backdrop-blur-xl' : ''} h-24`}>
-            <NavLink to='/' className="self-center">
-              <p className="self-center Home">HOME</p>
-            </NavLink>
-            <NavLink to='/Event' className="self-center">
-              <p className="self-center Event">Events</p>
-            </NavLink>
-            <NavLink to='/' className="self-center">
-              <div className="mt-5">
-                <img src="/ImgNav/Logo.svg" alt="Logo" loading='lazy' />
+          <div className="flex justify-center align-middle self-center">
+            <div className={`flex justify-evenly pl-14 text-white w-full font-light align-middle font-display3 text-lg z-50 ${bgblur ? 'backdrop-blur-xl' : ''} h-24 self-center`}>
+              <NavLink to='/' className="self-center">
+                <p className="self-center Home">HOME</p>
+              </NavLink>
+              <NavLink to='/Event' className="self-center">
+                <p className="self-center Event">Events</p>
+              </NavLink>
+              <NavLink to='/' className="self-center">
+                <div className="mt-5">
+                  <img src="/ImgNav/Logo.svg" alt="Logo" loading='lazy' />
+                </div>
+              </NavLink>
+              <NavLink to='/Blog' className="self-center">
+                <p className="self-center">Blogs</p>
+              </NavLink>
+              <div>
+                <SignedOut>
+                  <SignInButton>
+                    <div>
+                      <img src="/ImgNav/frame.svg" alt="frame" className="z-20 self-center translate-y-2 cursor-pointer max-sm:w-28 max-sm:h-12" loading='lazy' />
+                      <p className="translate-x-9 -translate-y-9 hover:text-Royal-Golden cursor-pointer inline-block text-white max-sm:-translate-y-7">Login</p>
+                    </div>
+                  </SignInButton>
+                </SignedOut>
+                <SignedIn>
+                  <div className='mt-8 h-6 w-[6.9rem]'>
+                  <UserButton userProfileMode='navigation'>
+                  </UserButton>
+                  </div>
+                </SignedIn>
               </div>
-            </NavLink>
-            <NavLink to='/Blog' className="self-center">
-              <p className="self-center">Blogs</p>
-            </NavLink>
-            <div>
-              <SignedOut>
-                <SignInButton>
-                  <div>
-                    <img src="/ImgNav/frame.svg" alt="frame" className="z-20 self-center translate-y-2 cursor-pointer max-sm:w-28 max-sm:h-12" loading='lazy' />
-                    <p className="translate-x-9 -translate-y-9 hover:text-Royal-Golden cursor-pointer inline-block text-white max-sm:-translate-y-7">Login</p>
-                  </div>
-                </SignInButton>
-              </SignedOut>
-              <SignedIn>
-                <SignOutButton>
-                  <div>
-                    <img src="/ImgNav/frame.svg" alt="frame" className="z-20 self-center translate-y-2 cursor-pointer max-sm:w-28 max-sm:h-12" loading='lazy' />
-                    <p className="translate-x-7 -translate-y-9 hover:text-Royal-Golden cursor-pointer inline-block text-white max-sm:-translate-y-7">Logout</p>
-                  </div>
-                </SignOutButton>
-              </SignedIn>
             </div>
-            <SignedIn>
-              <div className='mt-6'>
-              <UserButton userProfileMode='navigation'>
-              </UserButton>
-              </div>
-            </SignedIn>
           </div>
         }
       </Headroom>

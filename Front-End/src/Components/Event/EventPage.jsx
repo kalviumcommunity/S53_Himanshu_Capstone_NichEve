@@ -34,7 +34,8 @@ const EventPage = () => {
             <Navbar />
             <div className="-mt-24">
                 <div className="flex justify-center h-screen align-middle items-center pb-28 flex-col">
-                    <h1 className=" font-LED_Dot_Matrix text-10xl text-white  max-sm:text-7xl" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">Events</h1>
+                    <inv className='text'><h1 className="text-white text-10xl font-display max-sm:text-8xl" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">Events</h1></inv>
+                    <h2 className="text-xl text-white absolute mt-44 font-display2 font-light max-sm:text-xs max-sm:mt-24" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">-Choose Any Event To Enjoy Every Moments- </h2>
                     <div className={visible ? 'symbol-visible' : 'symbol-hidden'}>
                         <div className="mt-56 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-60 " >
                             <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
