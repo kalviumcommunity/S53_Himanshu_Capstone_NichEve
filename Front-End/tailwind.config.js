@@ -28,6 +28,7 @@ module.exports = {
         Work_Sans:["Work Sans", "sans-serif"],
         LED_Dot_Matrix:[ 'LED Dot-Matrix',"sans-serif"],
         Lavishly_Yours:["Lavishly Yours", "cursive"],
+        IBM_Plex:["IBM Plex Serif", "serif"],
       },
       textColor: {
         "Royal-Golden": '#A99155',
