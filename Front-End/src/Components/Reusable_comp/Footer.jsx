@@ -51,7 +51,9 @@ const Footer = () => {
                         <NavLink to='/About'>
                             <h2 className="hover:text-Royal-Golden cursor-pointer">About Us</h2>
                         </NavLink>
-                        <h2 className="hover:text-Royal-Golden cursor-pointer">Explore</h2>
+                        <NavLink to='/Explore'>
+                            <h2 className="hover:text-Royal-Golden cursor-pointer">Explore</h2>
+                        </NavLink>
                     </div>
                     <div className="flex justify-between w-1/4 -mt-16 mr-16 self-center z-50 ">
                         <a href="https://github.com/kalviumcommunity/S53_Himanshu_Capstone_NichEve" target='_blank'><img src="/BodyImg/Github_logo.svg" alt="GitHub_Logo" className="cursor-pointer" loading='lazy' /></a>
