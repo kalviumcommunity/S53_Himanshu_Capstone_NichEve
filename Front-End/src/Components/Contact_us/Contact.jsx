@@ -39,7 +39,7 @@ const Contact = () => {
                         <span className="text-[#B39342] text-10xl font-Lavishly_Yours max-sm:text-6xl"> Contact Us</span>
                     </div>
                     <div className={visible ? 'symbol-visible' : 'symbol-hidden'}>
-                        <div className="mt-32 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-60 " >
+                        <div className="mt-32 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-60 z-50" >
                             <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
                             <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
                         </div>
