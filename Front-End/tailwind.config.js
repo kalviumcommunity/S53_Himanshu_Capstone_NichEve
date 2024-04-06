@@ -52,7 +52,9 @@ module.exports = {
         "unique-gray": '#393E46',
         "Royal-Golden": '#A99155',
         "sweet-Purple" : '#CC00FF',
-        "pappy-brown" : "#7C613E"
+        "pappy-brown" : "#7C613E",
+        "border-brown": "#7C613E",
+        "bg-brown": "#4F4941"
       },
     },
   },
