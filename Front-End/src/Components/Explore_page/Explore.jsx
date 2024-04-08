@@ -83,12 +83,12 @@ const Explore = () => {
             <div className="-mt-24">
                 <div className="flex justify-center h-screen align-middle items-center pb-28 flex-col">
                     <div data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">
-                        <p className=" text-Royal-Golden mr-40 font-Lavishly_Yours text-10xl max-sm:text-5xl">Lets Explore</p>
-                        <p className="text-gray-400  text-7xl ml-96 max-sm:text-7xl max-sm:ml-16">The Memories</p>
+                        <p className=" text-Royal-Golden mr-40 font-Lavishly_Yours text-10xl max-sm:text-7xl max-sm:mr-16">Lets Explore</p>
+                        <p className="text-gray-400 text-7xl ml-96 max-sm:text-4xl max-sm:ml-32">The Memories</p>
                     </div>
                     <div className={visible ? 'symbol-visible' : 'symbol-hidden'}>
                         <div className='flex flex-col justify-center'>
-                            <div className="mt-32 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-60 cursor-pointer z-50 " >
+                            <div className="mt-32 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-44 cursor-pointer z-50 max-sm:z-0 " >
                                 <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
                                 <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
                             </div>

@@ -7,6 +7,8 @@ import Contact from '../Components/Contact_us/Contact'
 import About from '../Components/About_us/About'
 import { SignIn } from '@clerk/clerk-react'
 import Explore from '../Components/Explore_page/Explore'
+import Form from '../Components/Form_page/Form'
+import Listwithus from '../Components/Join_us/Listwithus'
 const Routing = () => {
   return (
     <Routes>
@@ -17,6 +19,8 @@ const Routing = () => {
         <Route path='/About' element={<About/>} />
         <Route path='/SignIn' element={<SignIn/>} />
         <Route path='/Explore' element={<Explore/>} />
+        <Route path='/Form' element={<Form/>} />
+        <Route path='/ListWithUs' element={<Listwithus/>} />
     </Routes>
   )
 }

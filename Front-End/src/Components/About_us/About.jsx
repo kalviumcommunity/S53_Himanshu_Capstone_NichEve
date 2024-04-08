@@ -37,9 +37,11 @@ const About = () => {
                     <div className='text'><h1 className="text-Royal-Golden text-9xl font-display max-sm:text-7xl" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">ABOUT US</h1></div>
                     <p className='text-white text-2xl font-light font-display2 max-sm:text-lg' data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">-Embark on a Journey with NICHEVE-</p>
                     <div className={visible ? 'symbol-visible' : 'symbol-hidden'}>
-                        <div className=" mt-[17rem] -mb-96 animate-bounce flex flex-col justify-center max-sm:mt-60 z-50" >
-                            <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
-                            <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
+                        <div className='flex flex-col justify-center'>
+                            <div className=" mt-[13.3rem] -mb-96 animate-bounce flex flex-col justify-center max-sm:mt-28 z-50 max-sm:z-0" >
+                                <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
+                                <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
+                            </div>                            
                         </div>
                     </div>
                 </div>
