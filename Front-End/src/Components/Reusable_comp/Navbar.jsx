@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Headroom from 'react-headroom';
 import './foot.css'
-import { SignIn, SignedIn, SignInButton, SignedOut, SignOutButton, UserProfile, UserButton } from '@clerk/clerk-react';
+import { SignedIn, SignInButton, SignedOut, SignOutButton, UserButton, useClerk } from '@clerk/clerk-react';
 
 
 
@@ -11,9 +11,6 @@ const Navbar = () => {
   const [blur, setIsBlur] = useState(false);
   const [bgblur, setBgBlur] = useState(false)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [signin, setSignIn] = useState(false)
-
-
   const toggleMenu = () => {
     setShowMenu(!showMenu);
     setIsBlur(!blur)
@@ -49,7 +46,7 @@ const Navbar = () => {
               <div className="self-center cursor-pointer max-sm:block lg:hidden sm:ml-10" onClick={toggleMenu}>
                 <img src="/ImgNav/hamburger.png" alt="Menu" className="h-6 self-center" loading='lazy' />
               </div>
-              <div className={showMenu ? "block lg:flex max-sm:flex max-sm:flex-col max-sm:w-screen mt-3 h-screen max-sm:justify-between max-sm:divide-y max-sm:divide-Royal-Golden max-sm:divide-x-4 max-sm:outline max-sm:outline-offset-2 max-sm:outline-2 sm:mt-6 sm:justify-between sm:flex sm:flex-col sm:divide-y sm:divide-Royal-Golden sm:divide-x-4 sm:outline sm:outline-offset-2 sm:outline-2 max-sm:bg-black max-sm:outline-Royal-Golden backdrop-blur-sm z-50" : "hidden lg:flex lg:items-center"}>
+              <div className={showMenu ? "block lg:flex max-sm:flex max-sm:flex-col max-sm:w-screen mt-3 h-screen max-sm:justify-between max-sm:divide-y max-sm:divide-Royal-Golden max-sm:divide-x-4 max-sm:outline max-sm:outline-offset-2 max-sm:outline-2 sm:mt-6 sm:justify-between sm:flex sm:flex-col sm:divide-y sm:divide-Royal-Golden sm:divide-x-4 sm:outline sm:outline-offset-2 sm:outline-2 max-sm:bg-black max-sm:outline-Royal-Golden backdrop-blur-sm z-50 max-sm:pb-44 max-sm:pt-10" : "hidden lg:flex lg:items-center"}>
                 <SignedIn>
                   <div className='mt-6 flex justify-center align-middle'>
                   <UserButton userProfileMode='navigation'>
@@ -71,6 +68,10 @@ const Navbar = () => {
                 <NavLink to='/Contact_us' className="self-center">
                   <p className="self-center hover:text-Royal-Golden cursor-pointer">Contact us</p>
                 </NavLink>
+                <NavLink to='/Explore' className="self-center">
+                  <p className="self-center hover:text-Royal-Golden cursor-pointer">Explore</p>
+                </NavLink>
+                {/* <p className='text-white text-3x'>Hello</p> */}
               </div>
             </div>
             <div className="mt-5 ">
@@ -115,7 +116,7 @@ const Navbar = () => {
               <div>
                 <SignedOut>
                   <SignInButton>
-                    <div>
+                    <div className="mt-2">
                       <img src="/ImgNav/frame.svg" alt="frame" className="z-20 self-center translate-y-2 cursor-pointer max-sm:w-28 max-sm:h-12" loading='lazy' />
                       <p className="translate-x-9 -translate-y-9 hover:text-Royal-Golden cursor-pointer inline-block text-white max-sm:-translate-y-7">Login</p>
                     </div>
@@ -131,6 +132,14 @@ const Navbar = () => {
             </div>
           </div>
         }
+        <>
+          <NavLink to='/ListWithUs'>
+          <div className="absolute right-5">
+            <img src="/ImgNav/List_with_us.svg" alt="List with Us" className='w-36 cursor-pointer' />
+          </div>
+          </NavLink>
+        </>
+        
       </Headroom>
     </nav>
   );

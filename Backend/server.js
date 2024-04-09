@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 require('dotenv').config()
 const port = process.env.PORT
 console.log(port);
 const { connection, isConnected } = require('./Database/Db');
 const Router = require('./route')
 app.use(express.json())
+app.use(cors());
 
 const errorHandler = (err, req, res, next) => {
     if(err){

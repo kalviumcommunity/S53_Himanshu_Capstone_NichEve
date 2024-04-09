@@ -4,6 +4,7 @@ import Aos from 'aos';
 import Footer from '../Reusable_comp/Footer';
 import 'aos/dist/aos.css'
 import '../../App.css'
+import { NavLink } from 'react-router-dom';
 const Contact = () => {
     const [visible, setIsVisible] = useState(true);
     const handleClick = () => {
@@ -39,13 +40,17 @@ const Contact = () => {
                         <span className="text-[#B39342] text-10xl font-Lavishly_Yours max-sm:text-6xl"> Contact Us</span>
                     </div>
                     <div className={visible ? 'symbol-visible' : 'symbol-hidden'}>
-                        <div className="mt-32 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-60 z-50" >
-                            <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
-                            <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
+                        <div className='flex flex-col justify-center'>
+                            <div className="mt-5 -mb-80 animate-bounce flex flex-col justify-center max-sm:mt-28 z-50 max-sm:z-0" >
+                                <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
+                                <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
+                            </div>
                         </div>
                     </div>
                     <div className="fixed right-8 bottom-28 max-sm:right-5 max-sm:bottom-14" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">
-                        <img src="/Contact_us_Img/messages.svg" alt="send Message" className="w-20 h-20 cursor-pointer max-sm:w-14 max-sm:h-14" loading='lazy' />
+                        <NavLink to='/Form'>
+                            <img src="/Contact_us_Img/messages.svg" alt="send Message" className="w-20 h-20 cursor-pointer max-sm:w-14 max-sm:h-14" loading='lazy' />
+                        </NavLink>
                     </div>
                 </div>
                 <Footer />

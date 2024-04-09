@@ -38,7 +38,7 @@ const Footer = () => {
 
     return (
         <footer className={visible ? 'footer-visible' : 'footer-hidden'}>
-            <div className="fixed w-full z-40 max-sm:hidden">
+            <div className="fixed w-full z-30 max-sm:hidden">
                 <div className="flex justify-between -mt-20">
                     <img src="/BodyImg/Rectangle.svg" alt="" className={`z-10 ${bgblur?"backdrop-blur-sm": " "}`} loading='lazy' />
                     <img src="/BodyImg/Rectangle2.svg" alt="" className={`z-10 ${bgblur?"backdrop-blur-sm": " "}`} loading='lazy' />
