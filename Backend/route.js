@@ -3,6 +3,7 @@ const app = express();
 const router = express.Router();
 const {isConnected} = require('./Database/Db')
 const Event = require('./Schema/Schema')
+const BForm = require('./Schema/BlogSchema')
 app.use(express.json())
 router.get('/',(req,res)=>{
     res.send(`Database Connection Status: ${isConnected()? 'Connection Successful' : 'Connection Unsuccessful'}`)
@@ -30,4 +31,28 @@ router.post('/Events',async(req,res)=>{
         res.status(500).json({error:"Internal server error"})
     }
 })
+
+
+router.post('/PostBlog', async(req,res)=>{
+    try{
+        const data = req.body;
+        const new_Blog_Post = new BForm(data);
+        const response = await new_Blog_Post.save();
+        console.log("Data Saved");
+        res.send(200).json(response);
+    }catch(err){
+        console.log(err);
+        res.send(500).json({error:"internal server error"});
+    }
+})
+router.get('/PostBlog',async(req,res)=>{
+    try {
+        const AllPosts =  await BForm.find();
+        res.send({Posts:AllPosts})
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error:"Internal server error"})
+    }
+})
+
 module.exports=router;
