@@ -3,10 +3,21 @@ import Navbar from '../Reusable_comp/Navbar'
 import Footer from '../Reusable_comp/Footer'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import axios from 'axios'
+import { useUser } from '@clerk/clerk-react'
 
 
 const EventPage = () => {
     const [visible, setIsVisible] = useState(true);
+    const [LoginData,setLoginData] = useState([]);
+    const [Approved,setApproved] = useState(false)
+    const [User_Email, setUserEmail] = useState("");
+    const Use = useUser();
+    useEffect(() => {
+        if (Use.user) {
+            setUserEmail(Use.user?.emailAddresses?.[0]?.emailAddress || "");
+        }
+    }, [Use.user]);
     const handleClick = () => {
         window.scrollBy({
             top: 900,
@@ -22,13 +33,28 @@ const EventPage = () => {
                 setIsVisible(true);
             }
         };
-
         window.addEventListener('scroll', handleScroll);
-
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     },[])
+    useState(()=>{
+        axios.get("http://localhost:4000/ListWithUs")
+        .then(res=>{
+            setLoginData(res.data.List)
+        }).catch(error=>{
+            console.log(error);
+        })
+    },[])
+    useEffect(() => {
+        if (LoginData.length > 0 && User_Email !== "") {
+            const approved = LoginData.some(item => item.Email === User_Email && item.Approved === true);
+            setApproved(approved);
+        }
+    }, [LoginData, User_Email]);
+    
+    console.log(LoginData);
+    console.log(Approved);    
     return (
         <main className='bg-[url(/Event_page_Img/Bg.jpg)] bg-no-repeat bg-cover bg-center bg-fixed z-10 '>
             <Navbar />
@@ -43,6 +69,9 @@ const EventPage = () => {
                                 <img src="/BodyImg/symbol.svg" alt="Gt Symbol" className="cursor-pointer" onClick={handleClick} loading='lazy' />
                             </div>
                         </div>
+                    </div>
+                    <div className={Approved ? "fixed right-8 bottom-28 max-sm:right-5 max-sm:bottom-14" : "hidden"}>
+                        <img src="/Event_page_Img/add-button.png" alt="add post" className="w-20 h-20 cursor-pointer max-sm:w-14 max-sm:h-14" loading='lazy' />
                     </div>
                 </div>
                 <Footer />
