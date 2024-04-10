@@ -21,6 +21,5 @@ const Blog = new mongoose.Schema({
         required: true,
     }
 })
-
 const BForm = mongoose.model('BlogPosts', Blog)
 module.exports = BForm;
