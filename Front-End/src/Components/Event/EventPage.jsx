@@ -48,13 +48,14 @@ const EventPage = () => {
     },[])
     useEffect(() => {
         if (LoginData.length > 0 && User_Email !== "") {
-            const approved = LoginData.some(item => item.Email === User_Email && item.Approved === true);
+            const approved = LoginData.some(item => item.from_email === User_Email && item.Approved === true);
             setApproved(approved);
         }
     }, [LoginData, User_Email]);
+    // console.log(User_Email);
     
-    console.log(LoginData);
-    console.log(Approved);    
+    // console.log(LoginData);
+    // console.log(Approved);    
     return (
         <main className='bg-[url(/Event_page_Img/Bg.jpg)] bg-no-repeat bg-cover bg-center bg-fixed z-10 '>
             <Navbar />

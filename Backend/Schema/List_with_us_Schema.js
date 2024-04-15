@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 const List_form = new mongoose.Schema({
-    Name:{
+    from_name:{
         type:String,
         required:true
     },
-    Email:{
+    from_email:{
         type:String,
         required:true,
     },
-    Message:{
+    message:{
         type:String,
         required:true,
     },

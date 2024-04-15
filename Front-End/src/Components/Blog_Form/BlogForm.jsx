@@ -5,8 +5,10 @@ import 'aos/dist/aos.css'
 import DateObject from "react-date-object";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useUser, SignedOut, SignInButton } from '@clerk/clerk-react'
 
 const BlogForm = () => {
+    const Use = useUser();
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, [])
@@ -47,8 +49,27 @@ const BlogForm = () => {
     }
 
     return (
-        <main className='z-10 bg-black'>
+        <main className='z-10 bg-black h-[100vh]'>
             <Navbar />
+            {!Use.isSignedIn ? (
+                <div className='mt-10'>
+                <div className="flex justify-evenly">
+                    <div>
+                        <img src="/Form/Lock.svg" alt="Lock" className=" w-[32rem] invert" />
+                    </div>
+                    <div className='flex flex-col justify-center'>
+                        <p className='text-white text-3xl'>Login First to Start Posting Happiness</p>
+                        <SignedOut>
+                            <SignInButton>
+                                <button className='text-white text-xl bg-orange-400 w-28 rounded-lg h-9 self-center mt-16'>Login</button>
+                            </SignInButton>
+                        </SignedOut>
+                    </div>
+                </div>
+            </div>
+            )
+        :
+        (
             <div className='-mt-24'>
                 <div className='h-screen flex justify-center '>
                     <div className=" w-2/4 bg-white h-2/3 mt-52 rounded-lg flex justify-evenly">
@@ -69,6 +90,9 @@ const BlogForm = () => {
                     </div>
                 </div>
             </div>
+        )
+        }
+            
         </main>
     )
 }
