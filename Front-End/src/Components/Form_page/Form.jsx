@@ -8,7 +8,9 @@ import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 
+
 const Form = () => {
+    console.log(`API Key: ${apiKey}`);
     const Use = useUser();
     const form = useRef();
     const [user_name,SetUser_Name] = useState("");
@@ -85,6 +87,7 @@ const Form = () => {
                                 <input type="text" placeholder='Name' name='from_name' onChange={(e)=>{SetUser_Name(e.target.value)}} className=" bg-gray-300 text-gray-500 placeholder:text-gray-500 placeholder:text-l rounded-full h-8 w-60 pl-5 outline-none" />
                                 <input type="email" placeholder='Email' name='from_email' value={User_Email} onChange={handleEmailChange} className=" bg-gray-300 text-gray-500 placeholder:text-gray-500 placeholder:text-l rounded-full h-8 w-60 pl-5 outline-none" />
                                 <textarea name="message" placeholder='Message' id="" cols="20" rows="6" className='bg-gray-300 text-gray-500 outline-none rounded-md pl-5 pt-1 pr-2'></textarea>
+                                {/* <input type="text" value={process.env.REACT_APP_SERVICE_KEY} /> */}
                                 <button className="bg-[#806DD6] rounded-lg text-white h-8">Submit</button>
                             </form>
                         </div>
