@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Form = () => {
-    console.log(`API Key: ${apiKey}`);
     const Use = useUser();
     const form = useRef();
     const [user_name,SetUser_Name] = useState("");
