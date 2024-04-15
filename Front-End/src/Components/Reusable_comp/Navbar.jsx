@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Headroom from 'react-headroom';
 import './foot.css'
-import { SignedIn, SignInButton, SignedOut, SignOutButton, UserButton, useClerk } from '@clerk/clerk-react';
+import { SignedIn, SignInButton, SignedOut, SignOutButton, UserButton, useUser } from '@clerk/clerk-react';
+import axios from 'axios'
 
 
 
@@ -11,6 +12,15 @@ const Navbar = () => {
   const [blur, setIsBlur] = useState(false);
   const [bgblur, setBgBlur] = useState(false)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [LoginData,setLoginData] = useState([]);
+  const [Approved,setApproved] = useState(false)
+  const [User_Email, setUserEmail] = useState("");
+  const Use = useUser();
+  useEffect(() => {
+    if (Use.user) {
+        setUserEmail(Use.user?.emailAddresses?.[0]?.emailAddress || "");
+    }
+}, [Use.user]);
   const toggleMenu = () => {
     setShowMenu(!showMenu);
     setIsBlur(!blur)
@@ -36,7 +46,23 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  useState(()=>{
+    axios.get("http://localhost:4000/ListWithUs")
+    .then(res=>{
+        setLoginData(res.data.List)
+    }).catch(error=>{
+        console.log(error);
+    })
+},[])
+useEffect(() => {
+  if (LoginData.length > 0 && User_Email !== "") {
+      const approved = LoginData.some(item => item.from_email === User_Email && item.Approved === true);
+      setApproved(approved);
+  }
+}, [LoginData, User_Email]);
+// console.log(Use.user);
+// console.log(LoginData);
+// console.log(Approved);    
   return (
     <nav>
       <Headroom>
@@ -134,7 +160,8 @@ const Navbar = () => {
         }
         <>
           <NavLink to='/ListWithUs'>
-          <div className="absolute right-5">
+          
+          <div className={Approved ? "hidden" : "absolute right-5"}>
             <img src="/ImgNav/List_with_us.svg" alt="List with Us" className='w-36 cursor-pointer' />
           </div>
           </NavLink>
