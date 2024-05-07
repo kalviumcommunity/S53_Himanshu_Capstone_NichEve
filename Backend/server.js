@@ -19,8 +19,8 @@ const errorHandler = (err, req, res, next) => {
 };
 app.use(errorHandler)
 
-const startserver = async()=>{
-    try{
+const startserver = async()=>{   
+    try{    
         await connection();
         app.use('/',Router)
         app.use(express.json())

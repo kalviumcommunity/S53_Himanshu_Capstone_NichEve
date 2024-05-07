@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "66321c989132fa41dc7f2926"
+  },
+  "Name": "Color-Thrill",
+  "Img": "https://firebasestorage.googleapis.com/v0/b/imageuploadnicheve.appspot.com/o/Files%2F99cf4254-c35a-4551-ad19-7e9315897448?alt=media&token=891bda38-810a-4843-952f-abc41a9755f4",
+  "Price": "250",
+  "Location": "Lovely Professional University",
+  "Time": "3 pm - 11 pm",
+  "__v": 0,
+  "eventDetails": [
+    {}
+  ]
+},
+{
+  "_id": {
+    "$oid": "66321cdf9132fa41dc7f292e"
+  },
+  "Name": "Flutter",
+  "Img": "https://firebasestorage.googleapis.com/v0/b/imageuploadnicheve.appspot.com/o/Files%2F5631673b-bfe0-4922-8428-0b73579c3e97?alt=media&token=3180572d-b51e-4cd6-be7c-f36773dd071e",
+  "Price": "250",
+  "Location": "Lovely professional University",
+  "Time": "3 pm - 11 pm",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66321d019132fa41dc7f2936"
+  },
+  "Name": "Beat Blitz",
+  "Img": "https://firebasestorage.googleapis.com/v0/b/imageuploadnicheve.appspot.com/o/Files%2F10b7fda7-7df9-40c8-be0c-dc4a0cbf279c?alt=media&token=e62f364e-bc93-4d21-a349-9e212783f358",
+  "Price": "250",
+  "Location": "Lovely professional University",
+  "Time": "3 pm - 11 pm",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66321d2a9132fa41dc7f293e"
+  },
+  "Name": "W O W",
+  "Img": "https://firebasestorage.googleapis.com/v0/b/imageuploadnicheve.appspot.com/o/Files%2Fe7303c68-a0de-4d32-99cf-ce4a60878163?alt=media&token=a2aafd91-02df-49d3-a643-8bbbadee69e2",
+  "Price": "250",
+  "Location": "Lovely professional University",
+  "Time": "3 pm - 11 pm",
+  "__v": 0
+}]

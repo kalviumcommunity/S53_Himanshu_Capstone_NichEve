@@ -10,6 +10,13 @@ import Explore from '../Components/Explore_page/Explore'
 import Form from '../Components/Form_page/Form'
 import Listwithus from '../Components/Join_us/Listwithus'
 import BlogForm from '../Components/Blog_Form/BlogForm'
+import HoliEvent from '../Components/Listing_Events/HoliEvent'
+import DanceEvent from '../Components/Listing_Events/DanceEvent'
+import WowEvent from '../Components/Listing_Events/WowEvent'
+import FlutterEvent from '../Components/Listing_Events/FlutterEvent'
+import EventForm from '../Components/Event/Event_Form/EventForm'
+import Event_collection from '../Components/Listing_Events/Event_collection'
+import Dashboard from '../Components/Dashboard/Dashboard'
 const Routing = () => {
   return (
     <Routes>
@@ -23,6 +30,13 @@ const Routing = () => {
         <Route path='/Form' element={<Form/>} />
         <Route path='/ListWithUs' element={<Listwithus/>} />
         <Route path='/PostBlog' element={<BlogForm/>} />
+        {/* <Route path='/holi/:id' element={<HoliEvent/>} />
+        <Route path='/dance/:id' element={<DanceEvent/>} />
+        <Route path='/wonderofwonders' element={<WowEvent/>} />
+        <Route path='/flutter' element={<FlutterEvent/>} /> */}
+        <Route path='/Events/:id' element={<Event_collection/>} />
+        <Route path='/EventForm' element={<EventForm/>} />
+        <Route path='/dashboard' element={<Dashboard/>}/>
     </Routes>
   )
 }
