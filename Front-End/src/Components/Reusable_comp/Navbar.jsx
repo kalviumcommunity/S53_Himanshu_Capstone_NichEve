@@ -21,6 +21,8 @@ const Navbar = () => {
         setUserEmail(Use.user?.emailAddresses?.[0]?.emailAddress || "");
     }
 }, [Use.user]);
+// let username = Use.user.username
+// let capitalizedUsername = username.charAt(0).toUpperCase() + username.slice(1);
   const toggleMenu = () => {
     setShowMenu(!showMenu);
     setIsBlur(!blur)
@@ -80,7 +82,7 @@ useEffect(() => {
                   </div>
                 </SignedIn>
                 <NavLink to='/' className="self-center">
-                  <p className="self-center hover:text-Royal-Golden cursor-pointer">HOME</p>
+                <button class="text-white text-lg font-semibold cursor-pointer relative border-none bg-transparent uppercase transition-colors ease-in-out duration-400 hover:text-white focus:text-white focus:after:w-full focus:after:left-0 hover:after:w-full hover:after:left-0 after:pointer-events-none after:absolute after:bottom-[-2px] after:left-[50%] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-400">HOME</button>
                 </NavLink>
                 <NavLink to='/Event' className="self-center">
                   <p className="self-center hover:text-Royal-Golden cursor-pointer">Events</p>
@@ -124,12 +126,12 @@ useEffect(() => {
           </div>
           :
           <div className="flex justify-center align-middle self-center">
-            <div className={`flex justify-evenly pl-14 text-white w-full font-light align-middle font-display3 text-lg z-50 ${bgblur ? 'backdrop-blur-xl' : ''} h-24 self-center`}>
+            <div className={`flex justify-evenly pl-14 text-white w-full font-light align-middle items-center font-display3 text-lg z-50 ${bgblur ? 'backdrop-blur-xl' : ''} h-24 self-center`}>
               <NavLink to='/' className="self-center">
-                <p className="self-center Home">HOME</p>
+              <button class="text-white text-lg cursor-pointer relative border-none bg-transparent uppercase transition-colors ease-in-out duration-400 hover:text-white focus:text-white focus:after:w-full focus:after:left-0 hover:after:w-full hover:after:left-0 after:pointer-events-none after:absolute after:bottom-[-2px] after:left-[50%] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-400">HOME</button>
               </NavLink>
               <NavLink to='/Event' className="self-center">
-                <p className="self-center Event">Events</p>
+              <button class="text-white text-lg cursor-pointer relative border-none bg-transparent uppercase transition-colors ease-in-out duration-400 hover:text-white focus:text-white focus:after:w-full focus:after:left-0 hover:after:w-full hover:after:left-0 after:pointer-events-none after:absolute after:bottom-[-2px] after:left-[50%] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-400">EVENTS</button>
               </NavLink>
               <NavLink to='/' className="self-center">
                 <div className="mt-5">
@@ -137,7 +139,7 @@ useEffect(() => {
                 </div>
               </NavLink>
               <NavLink to='/Blog' className="self-center">
-                <p className="self-center">Blogs</p>
+                <button class="text-white cursor-pointer relative border-none bg-transparent uppercase transition-colors ease-in-out duration-400 hover:text-white focus:text-white focus:after:w-full focus:after:left-0 hover:after:w-full hover:after:left-0 after:pointer-events-none after:absolute after:bottom-[-2px] after:left-[50%] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-400">Blogs</button>
               </NavLink>
               <div>
                 <SignedOut>
@@ -149,13 +151,28 @@ useEffect(() => {
                   </SignInButton>
                 </SignedOut>
                 <SignedIn>
-                  <div className='mt-8 h-6 w-[6.9rem]'>
+                  <div className='h-6'>
                   <UserButton userProfileMode='navigation'>
                   </UserButton>
                   </div>
                 </SignedIn>
               </div>
+              <NavLink to='/dashboard'>
+                  <div className="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-layout-dashboard">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" />
+                      <path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" />
+                      <path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" />
+                      <path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" />
+                    </svg>
+                  </div>
+              </NavLink>
+              {/* <div className='mt-8 right-7 absolute w-44 text-center text-[1.2rem]'>
+                <p className='text-[#A99155]'>Welcome👋, <span className='text-[#807e7f]'>{capitalizedUsername} </span></p>
+                </div> */}
             </div>
+  
           </div>
         }
         <>

@@ -16,13 +16,12 @@ const Form = () => {
     const [User_Email, setUserEmail] = useState("");
     const Navigate = useNavigate();
 
-    
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_kqvii49', 'template_487u965', form.current, {
-        publicKey: 'nJoO1by5wLoSRvea5',
+      .sendForm( import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLETE_KEY, form.current, {
+        publicKey: import.meta.env.VITE_PUBLIC_KEY,
       })
       .then(
         () => {
