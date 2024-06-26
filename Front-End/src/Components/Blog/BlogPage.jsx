@@ -31,7 +31,8 @@ const BlogPage = () => {
         };
     }, [])
     useEffect(() => {
-        axios.get("http://localhost:4000/Blog")
+        // axios.get("http://localhost:4000/Blog")
+        axios.get("https://s53-himanshu-capstone-nicheve.onrender.com/Blog")
             .then(res => {
                 setIsPosts(res.data.Posts)
                 console.log(res.data.Posts);

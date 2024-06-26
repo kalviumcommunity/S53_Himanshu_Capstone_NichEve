@@ -30,7 +30,8 @@ const Dashboard = () => {
         setIsOpen(!isOpen);
     };
 
-    const URL = "http://localhost:4000/Event";
+    // const URL = "http://localhost:4000/Event";
+    const URL = "https://s53-himanshu-capstone-nicheve.onrender.com/Event"
     useEffect(() => {
         axios.get(URL)
             .then(res => {
@@ -42,7 +43,8 @@ const Dashboard = () => {
             })
     }, [Use.user?.primaryEmailAddress?.emailAddress]);
 
-    const URL2 = "http://localhost:4000/Blog";
+    // const URL2 = "http://localhost:4000/Blog";
+    const URL2 = "https://s53-himanshu-capstone-nicheve.onrender.com/Blog"
     useEffect(() => {
         axios.get(URL2)
             .then(res => {
@@ -55,7 +57,8 @@ const Dashboard = () => {
     }, [Use.user?.primaryEmailAddress?.emailAddress]);
 
     const handleClick = (id) => {
-        axios.delete(`http://localhost:4000/Dashboard/${id}`)
+        // axios.delete(`http://localhost:4000/Dashboard/${id}`)
+        axios.delete(`https://s53-himanshu-capstone-nicheve.onrender.com/Dashboard/${id}`)
             .then(res => {
                 setUserEvents(userEvents.filter(item => item._id !== id)); // Update state instead of reloading page
             })
@@ -65,7 +68,8 @@ const Dashboard = () => {
     }
 
     const handleClick2 = (id) => {
-        axios.delete(`http://localhost:4000/DashboardBlog/${id}`)
+        // axios.delete(`http://localhost:4000/DashboardBlog/${id}`)
+        axios.delete(`https://s53-himanshu-capstone-nicheve.onrender.com/DashboardBlog/${id}`)
             .then(res => {
                 setUserPosts(userPosts.filter(item => item._id !== id)); // Update state instead of reloading page
             })
@@ -92,7 +96,8 @@ const Dashboard = () => {
             Description: formData.Description
         };
 
-        axios.put(`http://localhost:4000/DashboardBlog/${editId}`, updatedData)
+        // axios.put(`http://localhost:4000/DashboardBlog/${editId}`, updatedData)
+        axios.put(`https://s53-himanshu-capstone-nicheve.onrender.com/DashboardBlog/${editId}`, updatedData)
             .then(res => {
                 console.log(res.data);
                 navigate('/dashboard');

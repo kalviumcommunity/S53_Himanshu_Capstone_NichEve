@@ -51,7 +51,9 @@ const BlogForm = () => {
             [name]: value,
         })
     }
-    const URL = "http://localhost:4000/BlogForm"
+    // const URL = "http://localhost:4000/BlogForm"
+    const URL = "https://s53-himanshu-capstone-nicheve.onrender.com/BlogForm"
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         axios.post(URL, { Name, Profile, Location, Date, ImagePost, Email, Title, Description })

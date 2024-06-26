@@ -104,7 +104,8 @@ const EventForm = () => {
         }
     }
     console.log(AllImages);
-    const URL = "http://localhost:4000/EventForm"
+    // const URL = "http://localhost:4000/EventForm"
+    const URL = "https://s53-himanshu-capstone-nicheve.onrender.com/EventForm"
     // const URL2 = "http://localhost:4000/EventForm2"
     const handleSubmit = async (e) => {
         e.preventDefault();

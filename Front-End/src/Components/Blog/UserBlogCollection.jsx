@@ -8,7 +8,8 @@ import axios from 'axios'
 const UserBlogCollection = () => {
     const [Posts, setIsPosts] = useState([]);
     const { id } = useParams();
-    const URL = `http://localhost:4000/Blog/${id}`;
+    // const URL = `http://localhost:4000/Blog/${id}`;
+    const URL = `https://s53-himanshu-capstone-nicheve.onrender.com/Blog/${id}`
     useEffect(() => {
         axios.get(URL)
             .then(res => {

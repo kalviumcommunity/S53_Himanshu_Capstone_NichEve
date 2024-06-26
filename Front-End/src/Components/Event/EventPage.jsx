@@ -41,7 +41,8 @@ const EventPage = () => {
         };
     }, [])
     useState(() => {
-        axios.get("http://localhost:4000/ListWithUs")
+        // axios.get("http://localhost:4000/ListWithUs")
+        axios.get("https://s53-himanshu-capstone-nicheve.onrender.com/ListWithUs")
             .then(res => {
                 setLoginData(res.data.List)
             }).catch(error => {
@@ -49,7 +50,8 @@ const EventPage = () => {
             })
     }, [])
     useEffect(() => {
-        axios.get("http://localhost:4000/Event")
+        // axios.get("http://localhost:4000/Event")
+        axios.get("https://s53-himanshu-capstone-nicheve.onrender.com/Event")
             .then(res => {
                 setIsEvents(res.data.Events)
                 console.log(res.data.Events);

@@ -40,7 +40,8 @@ const Listwithus = () => {
     const message = FormData.message
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post("http://localhost:4000/ListWithUs", await { from_name, from_email, message })
+        // axios.post("http://localhost:4000/ListWithUs", await { from_name, from_email, message })
+        axios.post("https://s53-himanshu-capstone-nicheve.onrender.com/ListWithUs", await { from_name, from_email, message })
             .then(res => {
                 console.log(res.data)
             })
