@@ -27,6 +27,9 @@ const Event = new mongoose.Schema({
     Time:{
         type : String,
         required : true,
+    },
+    Email:{
+        type:String
     }
 })
 const AllEvents = mongoose.model('allEvent', Event);

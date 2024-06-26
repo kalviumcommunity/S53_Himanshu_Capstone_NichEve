@@ -49,7 +49,8 @@ const Navbar = () => {
     };
   }, []);
   useState(()=>{
-    axios.get("http://localhost:4000/ListWithUs")
+    // axios.get("http://localhost:4000/ListWithUs")
+    axios.get("https://s53-himanshu-capstone-nicheve.onrender.com/ListWithUs")
     .then(res=>{
         setLoginData(res.data.List)
     }).catch(error=>{

@@ -13,7 +13,7 @@ const EventPage = () => {
     const [LoginData, setLoginData] = useState([]);
     const [Approved, setApproved] = useState(false)
     const [User_Email, setUserEmail] = useState("");
-    const [Events,setIsEvents] = useState([]);
+    const [Events, setIsEvents] = useState([]);
     const Use = useUser();
     useEffect(() => {
         if (Use.user) {
@@ -41,7 +41,8 @@ const EventPage = () => {
         };
     }, [])
     useState(() => {
-        axios.get("http://localhost:4000/ListWithUs")
+        // axios.get("http://localhost:4000/ListWithUs")
+        axios.get("https://s53-himanshu-capstone-nicheve.onrender.com/ListWithUs")
             .then(res => {
                 setLoginData(res.data.List)
             }).catch(error => {
@@ -49,7 +50,8 @@ const EventPage = () => {
             })
     }, [])
     useEffect(() => {
-        axios.get("http://localhost:4000/Event")
+        // axios.get("http://localhost:4000/Event")
+        axios.get("https://s53-himanshu-capstone-nicheve.onrender.com/Event")
             .then(res => {
                 setIsEvents(res.data.Events)
                 console.log(res.data.Events);
@@ -98,11 +100,11 @@ const EventPage = () => {
                         </select>
                     </div>
                     <div className="grid grid-cols-2 pl-52 pt-32 gap-32 max-sm:grid-cols-1 max-sm:pl-12 max-w-screen-xl">
-                        {Events.map((data)=>(
+                        {Events.map((data) => (
                             <div data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine" key={data._id}>
                                 <div className="relative outline-sweet-Purple border-sweet-Purple border-2 outline-none inline-block transition-transform transition-shadow transform-gpu hover:scale-105 shadow-md">
                                     <div className="group text-[#c9c4c4]">
-                                        <img src={data.Img} alt="Event_Image" className="h-72 w-72 cursor-pointer hover:opacity-70 transform-gpu group-hover:opacity-70" loading="lazy" />
+                                        <img src={data.Img} alt="Event_Image" className="h-72 w-72 object-fill cursor-pointer hover:opacity-70 transform-gpu group-hover:opacity-70" loading="lazy" />
                                         <div className="absolute inset-0 flex flex-col justify-center items-center p-6 bg-[#161616] transform -rotate-x-90 transition-transform duration-500 ease-in-out opacity-0 group-hover:opacity-100">
                                             <p className="text-[1.5rem] text-[#ffffffee] font-semibold mb-2">{data.Name}</p>
                                             <div className='flex flex-col h-full justify-evenly'>

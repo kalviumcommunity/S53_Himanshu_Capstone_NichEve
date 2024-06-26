@@ -18,8 +18,9 @@ const EventForm = () => {
     const [AllImages2,setAllImages2] = useState("")
     const [AllImages3,setAllImages3] = useState("")
     const [AllImages4,setAllImages4] = useState("")
-
+    // const [img1,setimg1] = useState("");
     const Use = useUser();
+    console.log(Use);
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, [])
@@ -45,6 +46,8 @@ const EventForm = () => {
     const Location = FormData.Location;
     const Time = FormData.Time;
     const Like = 0;
+    const Email = Use.user?.primaryEmailAddress.emailAddress;
+    // console.log(Email);
 
     const handleChange = (e) => {
         let name = e.target.name;
@@ -61,6 +64,7 @@ const EventForm = () => {
                 console.log(val)
                 getDownloadURL(val.ref).then(url=>{
                     setAllImages(url)
+                    console.log(url);
                 })
             })
         }
@@ -83,6 +87,7 @@ const EventForm = () => {
                 console.log(val)
                 getDownloadURL(val.ref).then(url=>{
                     setAllImages3(url)
+                    console.log(url);
                 })
             })
         }
@@ -99,11 +104,12 @@ const EventForm = () => {
         }
     }
     console.log(AllImages);
-    const URL = "http://localhost:4000/EventForm"
+    // const URL = "http://localhost:4000/EventForm"
+    const URL = "https://s53-himanshu-capstone-nicheve.onrender.com/EventForm"
     // const URL2 = "http://localhost:4000/EventForm2"
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post(URL, { Name, Img, Price, Location, Time, BgImg, CoverImg,Like, Date, Description, Guest, GuestImg })
+        await axios.post(URL, { Name, Img, Price, Location, Time, Email, BgImg, CoverImg,Like, Date, Description, Guest, GuestImg })
             .then(res => {
                 console.log(res.data)
                 Navigate('/Event')

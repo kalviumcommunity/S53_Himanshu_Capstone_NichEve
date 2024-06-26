@@ -15,7 +15,8 @@ const DanceEvent = () => {
         Islikes(prevLikes => (prevLikes + 1) % 2 ? prevLikes + 1 : prevLikes - 1);
         SetClicked(!clicked)
     };
-    const URL = `http://localhost:4000/Eventlist/${id}`;
+    // const URL = `http://localhost:4000/Eventlist/${id}`;
+    const URL = `https://s53-himanshu-capstone-nicheve.onrender.com/Eventlist/${id}`
     useEffect(()=>{
         axios.get(URL)
             .then(res => {

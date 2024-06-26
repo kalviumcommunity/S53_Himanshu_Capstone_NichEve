@@ -31,9 +31,11 @@ const BlogPage = () => {
         };
     }, [])
     useEffect(() => {
-        axios.get("http://localhost:4000/PostBlog")
+        // axios.get("http://localhost:4000/Blog")
+        axios.get("https://s53-himanshu-capstone-nicheve.onrender.com/Blog")
             .then(res => {
                 setIsPosts(res.data.Posts)
+                console.log(res.data.Posts);
             }).catch(err => {
                 console.log(err);
             })
@@ -62,105 +64,36 @@ const BlogPage = () => {
                     </div>
                 </div>
                 <Footer />
-                <div className="flex flex-col justify-between pb-36 pt-10">
-                    {Posts.map((data, index) => (
-                        <div key={index} className="h-72 w-3/5 bg-pappy-brown outline-dotted outline-offset-8 rounded-sm outline-Royal-Golden self-center mt-48 max-sm:h-56 max-sm:w-80" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">
-                            <div className="flex">
-                                <div className="flex flex-col h-72 justify-evenly pl-9 w-auto max-sm:flex-row max-sm:pt-4">
-                                    <img src={data.Profile} alt="Profile photo" className="h-44 w-44 rounded-full border-2 max-sm:h-16 max-sm:w-16" loading='lazy' />
-                                    <p className="text-white font-Inter text-xl ml-6 max-sm:text-sm max-sm:mt-5 max-sm:h-10 max-sm:w-40">{data.Name}</p>
-                                </div>
-                                <div className="flex flex-col justify-evenly max-sm:-mt-3 max-sm:justify-center w-[100%]">
-                                    <p className="text-white pl-20 pr-10 pt-5 font-Roboto font-light max-sm:text-[8px] max-sm:pl-0 max-sm:pr-6 max-sm:pt-7 max-sm:self-center max-sm:-ml-[13rem]">{data.Message}</p>
-                                    <div className="flex w-20 snap-center justify-evenly ml-28 mt-4 max-sm:-ml-[13rem] max-sm:mt-2 max-sm:w-8">
-                                        <img src="/Blog_page_img/heart.png" alt="Like" className="invert w-6 h-6 max-sm:w-3 max-sm:h-3 max-sm:self-center " loading='lazy' />
-                                        <p className="text-white font-Roboto max-sm:text-[10px]">12</p>
-                                    </div>
-                                    <div className="flex justify-around max-sm:ml-[-13rem] max-sm:pr-7 max-sm:pl-0 max-sm:pt-3 max-sm:justify-between">
-                                        <p className="text-white text-s max-sm:text-[8px]">Posted on - {data.Date}</p>
-                                        <div className="flex">
-                                            <img src="/Blog_page_img/location.png" alt="Location" className="w-3 h-3 invert self-center max-sm:w-2 max-sm:h-2" loading='lazy' />
-                                            <p className="text-white text-s max-sm:text-[8px]">{data.Location}</p>
-                                        </div>
-                                    </div>
-                                </div>
+                <div className='pb-36 pt-10 grid grid-cols-3 gap-28 ml-24'>
+                    {Posts.map((data) => (
+                        <div class="relative flex w-80 flex-col rounded-xl bg-[#0F0F0F] bg-clip-border shadow-md">
+                            <div class="relative mx-4 -mt-6 h-64 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                                <img src={data.ImagePost} alt="" className="absolute inset-0 w-full h-full object-cover" />
                             </div>
-                            <hr className="w-[100%] self-center mt-20" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine" />
+                            <div class="p-6">
+                                <div className='flex items-center'>
+                                    <img src={data.Profile} alt="profile pic" className="rounded-full w-10 h-10" />
+                                    <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 text-white antialiased ml-4">
+                                        {data.Name}
+                                    </h5>
+                                </div>
+                                <p class="block font-sans text-base font-semibold leading-relaxed text-inherit antialiased text-white mt-3">
+                                    {data.Location}
+                                </p>
+                                <p class="block font-sans text-base leading-relaxed text-inherit antialiased text-white font-semibold">
+                                    {data.Date}
+                                </p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <NavLink to={`/Blogs/${data._id}`}>
+                                    <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                        Read More
+                                    </button>
+                                </NavLink>
+                            </div>
                         </div>
-
                     ))}
                 </div>
-                {/* <div className="flex flex-col justify-between pb-36">
-                    <div className="h-72 w-3/5 bg-pappy-brown outline-dotted outline-offset-8 rounded-sm outline-Royal-Golden self-center mt-96 max-sm:h-56 max-sm:w-80" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">
-                        <div className="flex">
-                            <div className="flex flex-col h-72 justify-evenly pl-9 w-4/5 max-sm:flex-row max-sm:pt-4">
-                                <img src="/Blog_page_img/profile-1.jpg" alt="Profile photo" className="h-48 w-44 rounded-full border-2 max-sm:h-16 max-sm:w-16" loading='lazy' />
-                                <p className="text-white font-Inter text-xl ml-6 max-sm:text-sm max-sm:mt-5 max-sm:h-10 max-sm:w-40 ">Mavia Kaur</p>
-                            </div>
-                            <div className="flex flex-col justify-evenly max-sm:-mt-3 max-sm:justify-center">
-                                <p className="text-white pl-20 pr-10 pt-5 font-Roboto font-light max-sm:text-[8px] max-sm:pl-0 max-sm:pr-6 max-sm:pt-7 max-sm:self-center max-sm:-ml-[13rem]">Immersed in an electrifying atmosphere, the AP Dhillo concert was a spectacle of sheer brilliance. Surrounded by an exuberant crowd, each moment pulsated with energy, celebrating music in its purest form. From the captivating performances to the infectious party vibe, every element coalesced into an unforgettable experience. It was a night where euphoria reigned supreme, leaving indelible memories etched in the heart.</p>
-                                <div className="flex w-20 snap-center justify-evenly ml-28 mt-4 max-sm:-ml-[13rem] max-sm:mt-2 max-sm:w-8">
-                                    <img src="/Blog_page_img/heart.png" alt="Like" className="invert w-6 h-6 max-sm:w-3 max-sm:h-3 max-sm:self-center " loading='lazy' />
-                                    <p className="text-white font-Roboto max-sm:text-[10px]">12</p>
-                                </div>
-                                <div className="flex justify-around max-sm:ml-[-13rem] max-sm:pr-7 max-sm:pl-0 max-sm:pt-3 max-sm:justify-between">
-                                    <p className="text-white text-s max-sm:text-[8px]">Posted on - 21 Aug 2023</p>
-                                    <div className="flex">
-                                        <img src="/Blog_page_img/location.png" alt="Location" className="w-3 h-3 invert self-center max-sm:w-2 max-sm:h-2" loading='lazy' />
-                                        <p className="text-white text-s max-sm:text-[8px]">Lovely Professional University</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr className="w-4/5 self-center mt-20" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine" />
-                    <div className="h-72 w-3/5 bg-pappy-brown outline-dotted outline-offset-8 rounded-sm outline-Royal-Golden self-center mt-20 max-sm:h-56 max-sm:w-80 max-sm:mt-16" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">
-                        <div className="flex">
-                            <div className="flex flex-col h-72 justify-evenly pl-9 w-4/5 max-sm:flex-row max-sm:pt-4">
-                                <img src="/Blog_page_img/profile-1.jpg" alt="Profile photo" className="h-48 w-44 rounded-full border-2 max-sm:h-16 max-sm:w-16" loading='lazy' />
-                                <p className="text-white font-Inter text-xl ml-6 max-sm:text-sm max-sm:mt-5 max-sm:h-10 max-sm:w-40 ">Mavia Kaur</p>
-                            </div>
-                            <div className="flex flex-col justify-evenly max-sm:-mt-3 max-sm:justify-center">
-                                <p className="text-white pl-20 pr-10 pt-5 font-Roboto font-light max-sm:text-[8px] max-sm:pl-0 max-sm:pr-6 max-sm:pt-7 max-sm:self-center max-sm:-ml-[13rem]">Immersed in an electrifying atmosphere, the AP Dhillo concert was a spectacle of sheer brilliance. Surrounded by an exuberant crowd, each moment pulsated with energy, celebrating music in its purest form. From the captivating performances to the infectious party vibe, every element coalesced into an unforgettable experience. It was a night where euphoria reigned supreme, leaving indelible memories etched in the heart.</p>
-                                <div className="flex w-20 snap-center justify-evenly ml-28 mt-4 max-sm:-ml-[13rem] max-sm:mt-2 max-sm:w-8">
-                                    <img src="/Blog_page_img/heart.png" alt="Like" className="invert w-6 h-6 max-sm:w-3 max-sm:h-3 max-sm:self-center " loading='lazy' />
-                                    <p className="text-white font-Roboto max-sm:text-[10px]">12</p>
-                                </div>
-                                <div className="flex justify-around max-sm:ml-[-13rem] max-sm:pr-7 max-sm:pl-0 max-sm:pt-3 max-sm:justify-between">
-                                    <p className="text-white text-s max-sm:text-[8px]">Posted on - 21 Aug 2023</p>
-                                    <div className="flex">
-                                        <img src="/Blog_page_img/location.png" alt="Location" className="w-3 h-3 invert self-center max-sm:w-2 max-sm:h-2" loading='lazy' />
-                                        <p className="text-white text-s max-sm:text-[8px]">Lovely Professional University</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr className="w-4/5 self-center max-sm:mt-16 mt-20" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine" />
-                    <div className="h-72 w-3/5 bg-pappy-brown outline-dotted outline-offset-8 rounded-sm outline-Royal-Golden self-center mt-20 max-sm:h-56 max-sm:w-80 max-sm:mt-16" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">
-                        <div className="flex">
-                            <div className="flex flex-col h-72 justify-evenly pl-9 w-4/5 max-sm:flex-row max-sm:pt-4">
-                                <img src="/Blog_page_img/profile-1.jpg" alt="Profile photo" className="h-48 w-44 rounded-full border-2 max-sm:h-16 max-sm:w-16" loading='lazy' />
-                                <p className="text-white font-Inter text-xl ml-6 max-sm:text-sm max-sm:mt-5 max-sm:h-10 max-sm:w-40 ">Mavia Kaur</p>
-                            </div>
-                            <div className="flex flex-col justify-evenly max-sm:-mt-3 max-sm:justify-center">
-                                <p className="text-white pl-20 pr-10 pt-5 font-Roboto font-light max-sm:text-[8px] max-sm:pl-0 max-sm:pr-6 max-sm:pt-7 max-sm:self-center max-sm:-ml-[13rem]">Immersed in an electrifying atmosphere, the AP Dhillo concert was a spectacle of sheer brilliance. Surrounded by an exuberant crowd, each moment pulsated with energy, celebrating music in its purest form. From the captivating performances to the infectious party vibe, every element coalesced into an unforgettable experience. It was a night where euphoria reigned supreme, leaving indelible memories etched in the heart.</p>
-                                <div className="flex w-20 snap-center justify-evenly ml-28 mt-4 max-sm:-ml-[13rem] max-sm:mt-2 max-sm:w-8">
-                                    <img src="/Blog_page_img/heart.png" alt="Like" className="invert w-6 h-6 max-sm:w-3 max-sm:h-3 max-sm:self-center " loading='lazy' />
-                                    <p className="text-white font-Roboto max-sm:text-[10px]">12</p>
-                                </div>
-                                <div className="flex justify-around max-sm:ml-[-13rem] max-sm:pr-7 max-sm:pl-0 max-sm:pt-3 max-sm:justify-between">
-                                    <p className="text-white text-s max-sm:text-[8px]">Posted on - 21 Aug 2023</p>
-                                    <div className="flex">
-                                        <img src="/Blog_page_img/location.png" alt="Location" className="w-3 h-3 invert self-center max-sm:w-2 max-sm:h-2" loading='lazy' />
-                                        <p className="text-white text-s max-sm:text-[8px]">Lovely Professional University</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
-
             </div>
         </main>
     )

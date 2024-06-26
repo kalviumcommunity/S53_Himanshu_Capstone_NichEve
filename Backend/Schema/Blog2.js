@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
-const Blog = new mongoose.Schema({
-    BlogList: [
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"BlogDescription"
-        }
-    ],
+const Blog2 = new mongoose.Schema({
+    Title:{
+        type:String,
+        required: true
+    },
+    Description:{
+        type:String,
+        required: true,
+    },
     Name:{
         type:String,
         required: true
@@ -25,13 +27,6 @@ const Blog = new mongoose.Schema({
         type:String,
         required:true,
     },
-    Email:{
-        type:String,
-    },
-    Title:{
-        type:String,
-        required: true
-    },
 })
-const BForm = mongoose.model('BlogPosts', Blog)
-module.exports = BForm;
+const BlogDescription = mongoose.model('BlogDescription', Blog2)
+module.exports = BlogDescription;
