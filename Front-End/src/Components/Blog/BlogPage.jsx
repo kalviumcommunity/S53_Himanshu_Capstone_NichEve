@@ -31,9 +31,10 @@ const BlogPage = () => {
         };
     }, [])
     useEffect(() => {
-        axios.get("http://localhost:4000/PostBlog")
+        axios.get("http://localhost:4000/Blog")
             .then(res => {
                 setIsPosts(res.data.Posts)
+                console.log(res.data.Posts);
             }).catch(err => {
                 console.log(err);
             })
@@ -62,7 +63,37 @@ const BlogPage = () => {
                     </div>
                 </div>
                 <Footer />
-                <div className="flex flex-col justify-between pb-36 pt-10">
+                <div className='pb-36 pt-10 grid grid-cols-3 gap-28 ml-24'>
+                    {Posts.map((data) => (
+                        <div class="relative flex w-80 flex-col rounded-xl bg-[#0F0F0F] bg-clip-border shadow-md">
+                            <div class="relative mx-4 -mt-6 h-64 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                                <img src={data.ImagePost} alt="" className="absolute inset-0 w-full h-full object-cover" />
+                            </div>
+                            <div class="p-6">
+                                <div className='flex items-center'>
+                                    <img src={data.Profile} alt="profile pic" className="rounded-full w-10 h-10" />
+                                    <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 text-white antialiased ml-4">
+                                        {data.Name}
+                                    </h5>
+                                </div>
+                                <p class="block font-sans text-base font-semibold leading-relaxed text-inherit antialiased text-white mt-3">
+                                    {data.Location}
+                                </p>
+                                <p class="block font-sans text-base leading-relaxed text-inherit antialiased text-white font-semibold">
+                                    {data.Date}
+                                </p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <NavLink to={`/Blogs/${data._id}`}>
+                                    <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                        Read More
+                                    </button>
+                                </NavLink>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                {/* <div className="flex flex-col justify-between pb-36 pt-10">
                     {Posts.map((data, index) => (
                         <div key={index} className="h-72 w-3/5 bg-pappy-brown outline-dotted outline-offset-8 rounded-sm outline-Royal-Golden self-center mt-48 max-sm:h-56 max-sm:w-80" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">
                             <div className="flex">
@@ -89,7 +120,7 @@ const BlogPage = () => {
                         </div>
 
                     ))}
-                </div>
+                </div> */}
                 {/* <div className="flex flex-col justify-between pb-36">
                     <div className="h-72 w-3/5 bg-pappy-brown outline-dotted outline-offset-8 rounded-sm outline-Royal-Golden self-center mt-96 max-sm:h-56 max-sm:w-80" data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine">
                         <div className="flex">

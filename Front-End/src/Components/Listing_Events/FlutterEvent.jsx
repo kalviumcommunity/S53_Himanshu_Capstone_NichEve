@@ -57,9 +57,9 @@ const FlutterEvent = () => {
                     </div>
                 </div>
                 <div className='pl-36 pr-96 mt-20 leading-[6rem]'>
-                    <p className='text-white font-bold text-[2rem]'>About The Event</p>
-                    <p className='text-[#b3abab] text-base'><span className='text-3xl text-[#cfb93b]'>Welcome</span> to <span className='text-[#ed3ded]'>"Wonder of Wonders" </span> - an enlightening event brought to you by Google, where innovation meets inspiration. Join us for an immersive journey into the latest technologies and cutting-edge advancements that are reshaping our digital landscape. Delve into the world of interactive LinkedIn profiles and unlock the secrets to crafting a compelling online presence that stands out in today's competitive market.</p>
+                    <p className='text-white font-bold text-[2rem]'>About The Event</p>                    <p className='text-[#b3abab] text-base'><span className='text-3xl text-[#cfb93b]'>Welcome</span> to <span className='text-[#ed3ded]'>"Wonder of Wonders" </span> - an enlightening event brought to you by Google, where innovation meets inspiration. Join us for an immersive journey into the latest technologies and cutting-edge advancements that are reshaping our digital landscape. Delve into the world of interactive LinkedIn profiles and unlock the secrets to crafting a compelling online presence that stands out in today's competitive market.</p>
                     <p className='text-[#b3abab] text-base mt-6'>At "Wonder of Wonders," Google experts will guide you through hands-on workshops, insightful presentations, and engaging Q&A sessions, offering valuable insights and practical tips to enhance your digital skills. Whether you're a seasoned professional or an aspiring enthusiast, this event promises to ignite your curiosity, expand your knowledge, and empower you to thrive in the ever-evolving realm of technology. Don't miss this opportunity to discover the wonders of tomorrow, today.</p>
+
                 </div>
                 <div className='text-white mt-16 pl-36 leading-[7rem]'>
                     <p className='font-bold text-[2rem]'>Chief Guest</p>

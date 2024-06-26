@@ -17,6 +17,7 @@ import FlutterEvent from '../Components/Listing_Events/FlutterEvent'
 import EventForm from '../Components/Event/Event_Form/EventForm'
 import Event_collection from '../Components/Listing_Events/Event_collection'
 import Dashboard from '../Components/Dashboard/Dashboard'
+import UserBlogCollection from '../Components/Blog/UserBlogCollection'
 const Routing = () => {
   return (
     <Routes>
@@ -37,6 +38,7 @@ const Routing = () => {
         <Route path='/Events/:id' element={<Event_collection/>} />
         <Route path='/EventForm' element={<EventForm/>} />
         <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/Blogs/:id' element={<UserBlogCollection/>} />
     </Routes>
   )
 }
