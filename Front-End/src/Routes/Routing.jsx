@@ -31,10 +31,6 @@ const Routing = () => {
         <Route path='/Form' element={<Form/>} />
         <Route path='/ListWithUs' element={<Listwithus/>} />
         <Route path='/PostBlog' element={<BlogForm/>} />
-        {/* <Route path='/holi/:id' element={<HoliEvent/>} />
-        <Route path='/dance/:id' element={<DanceEvent/>} />
-        <Route path='/wonderofwonders' element={<WowEvent/>} />
-        <Route path='/flutter' element={<FlutterEvent/>} /> */}
         <Route path='/Events/:id' element={<Event_collection/>} />
         <Route path='/EventForm' element={<EventForm/>} />
         <Route path='/dashboard' element={<Dashboard/>}/>
