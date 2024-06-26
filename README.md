@@ -1,6 +1,6 @@
 
 ## FrontEnd Deployed Link : https://nicheve.vercel.app/ 
-﻿## Backend Deployed Link : https://s53-himanshu-capstone-nicheve.onrender.com/
+## Backend Deployed Link : https://s53-himanshu-capstone-nicheve.onrender.com/
 # Title:
 ## NichEve: Your Ultimate Event Booking Platform
 
